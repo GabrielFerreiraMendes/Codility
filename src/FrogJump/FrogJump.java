@@ -4,23 +4,14 @@ public class FrogJump {
 
 	public int solution(int X, int Y, int D) {
 
-		if (X > Y) {
+		if (X > Y)
 			return 0;
+
+		if ((double) ((Y - X) / D) < (((double) Y - (double) X) / (double) D)) {
+			return ((Y - X) / D) + 1;
 		}
 
-		int cont = X, jumpCount = 0;
-
-		while (cont + D <= Y) {
-			jumpCount++;
-
-			cont += D;
-		}
-
-		if (cont < Y) {
-			jumpCount++;
-		}
-
-		return jumpCount;
+		return ((Y - X) / D);
 	}
 
 }
